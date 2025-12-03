@@ -1,0 +1,10 @@
+Resumo do processo final
+Abra o terminal na pasta onde está o arquivo gerenciador_gui.py.
+
+Rode: python -m PyInstaller --noconsole --onefile gerenciador_gui.py
+
+Aguarde finalizar.
+
+Abra a pasta dist que foi criada e lá estará seu programa.
+
+Funcionou agora?
