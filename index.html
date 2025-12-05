@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ONT MAC Reader — IndexedDB (Sem Criptografia)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ONT MAC Reader — IndexedDB (Sem Criptografia)</h1>
+  <div class="card">
+    <div class="toolbar">
+      <div class="flex">
+        <strong>Banco de Dados:</strong>
+        <span class="small">appDB · store: ont_macs</span>
+      </div>
+      <div class="flex">
+        <button id="exportBtn">Exportar JSON</button>
+        <button id="importBtn" class="ghost">Importar JSON/CSV</button>
+        <input id="fileInput" class="hidden" type="file" accept="application/json,text/csv, .csv" />
+      </div>
+    </div>
+
+    <form id="addForm">
+      <input id="macInput" placeholder="MAC (ex: 00:11:22:33:44:55)" required />
+      <input id="serialInput" placeholder="Serial (opcional)" />
+      <input id="modelInput" placeholder="Modelo (opcional)" />
+      <input id="passwordInput" placeholder="Senha da ONT (opcional)" />
+      <button type="submit" style="grid-column: span 1 / auto;">Adicionar Registro</button>
+    </form>
+
+    <div id="msg" class="small hidden" style="margin-top:8px"></div>
+
+    <table id="itemsTable" class="hidden">
+      <thead>
+        <tr><th>ID</th><th>MAC</th><th>Serial</th><th>Modelo</th><th>Senha</th><th>Detectado em</th><th>Ações</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p id="empty" class="small" style="margin-top:12px">Nenhum registro encontrado. Use o formulário acima para adicionar um novo registro.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
